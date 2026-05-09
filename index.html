@@ -289,3 +289,89 @@
           <button class="btn-next" onclick="goTo(2)">Próximo →</button>
         </div>
       </div>
+
+       <!-- STEP 2 -->
+      <div class="modal-body hidden" id="step2">
+        <div class="step-indicator">
+          <div class="step-dot done">✓</div>
+          <div class="step-line done"></div>
+          <div class="step-dot active">2</div>
+          <div class="step-line"></div>
+          <div class="step-dot inactive">3</div>
+        </div>
+        <div class="step-title">Dados do familiar</div>
+        <div class="step-sub">Quem vai aprender com o Ensina+?</div>
+        <div class="field">
+          <label for="idoso-nome">Nome completo do familiar</label>
+          <input type="text" id="idoso-nome" placeholder="Ex: Maria Rosa da Silva" />
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="idoso-idade">Idade</label>
+            <input type="number" id="idoso-idade" placeholder="Ex: 72" min="50" max="110" />
+          </div>
+          <div class="field">
+            <label for="idoso-cidade">Cidade</label>
+            <input type="text" id="idoso-cidade" placeholder="Ex: São Paulo" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="idoso-device">Dispositivo que usa</label>
+          <select id="idoso-device">
+            <option value="">Selecione...</option>
+            <option>Celular Android</option>
+            <option>iPhone</option>
+            <option>Computador / Notebook</option>
+            <option>Tablet</option>
+            <option>Ainda não tem dispositivo</option>
+          </select>
+        </div>
+        <div class="btn-row">
+          <button class="btn-back" onclick="goTo(1)">← Voltar</button>
+          <button class="btn-next" onclick="goTo(3)">Próximo →</button>
+        </div>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="modal-body hidden" id="step3">
+        <div class="step-indicator">
+          <div class="step-dot done">✓</div>
+          <div class="step-line done"></div>
+          <div class="step-dot done">✓</div>
+          <div class="step-line done"></div>
+          <div class="step-dot active">3</div>
+        </div>
+        <div class="step-title">O que quer aprender?</div>
+        <div class="step-sub">Selecione os temas de interesse do seu familiar</div>
+        <div class="checkbox-group">
+          <label class="checkbox-item">
+            <input type="checkbox" />
+            <span class="checkbox-emoji">📱</span>
+            <div class="checkbox-label">WhatsApp e mensagens<span>Fotos, áudios, grupos e videochamadas</span></div>
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" />
+            <span class="checkbox-emoji">🔒</span>
+            <div class="checkbox-label">Segurança digital<span>Identificar golpes e proteger dados</span></div>
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" />
+            <span class="checkbox-emoji">💻</span>
+            <div class="checkbox-label">Computador básico<span>E-mail, navegação e documentos</span></div>
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" />
+            <span class="checkbox-emoji">📹</span>
+            <div class="checkbox-label">Videochamadas<span>Zoom, Google Meet e FaceTime</span></div>
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" />
+            <span class="checkbox-emoji">🏦</span>
+            <div class="checkbox-label">Apps do dia a dia<span>Banco, delivery, transporte e saúde</span></div>
+          </label>
+        </div>
+        <div class="btn-row">
+          <button class="btn-back" onclick="goTo(2)">← Voltar</button>
+          <button class="btn-next" onclick="goTo('success')">Cadastrar ✓</button>
+        </div>
+      </div>
