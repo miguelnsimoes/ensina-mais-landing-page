@@ -7,20 +7,20 @@ O **Ensina+** é uma Landing Page desenvolvida como projeto prático para a disc
 
 O objetivo do projeto é oferecer uma interface intuitiva e acessível para um serviço focado na inclusão digital de idosos, permitindo que familiares cadastrem seus pais ou avós para aprenderem a lidar com tecnologias modernas de forma paciente e gratuita.
 
-## 👥 Integrantes do Grupo
+## Integrantes do Grupo
 
 *   **João Levi Cabral Piotto**
 *   **João Pedro Alexandrov Lorenzetti**
 *   **Miguel Nazário Simões**
 
-## 🚀 Tecnologias e Metodologia
+## Tecnologias e Metodologia
 
 Para este projeto, optamos por uma abordagem de desenvolvimento limpa e organizada:
 
 *   **HTML5 & CSS3:** Utilização de semântica moderna e variáveis (Design Tokens) para facilitar a manutenção.
 *   **JavaScript (Vanilla):** Implementação de lógica para o formulário multietapas (modal).
 
-## 🛠️ Funcionalidades Implementadas
+## Funcionalidades Implementadas
 
 - [x] **Arquitetura Modular:** CSS separado por seções e funcionalidades.
 - [x] **Modal Multietapas:** Fluxo de cadastro fluido dividido em:
@@ -30,7 +30,7 @@ Para este projeto, optamos por uma abordagem de desenvolvimento limpa e organiza
 - [x] **Responsividade:** Layout adaptável para smartphones, tablets e desktops.
 - [x] **Navegação Inteligente:** Menu fixo e âncoras para rolagem suave.
 
-## 📂 Estrutura de Arquivos
+## Estrutura de Arquivos
 
 ```text
 ├── assets/          # Ícones e recursos visuais
