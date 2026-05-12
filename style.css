@@ -135,3 +135,100 @@ body {
 .btn-dark:hover { 
     background: #000; 
 }
+
+.section { 
+    padding: 72px 0; 
+}
+
+.section-white { 
+    background: var(--white); 
+}
+
+.section-dark { 
+    background: var(--dark); 
+}
+
+.section-yellow { 
+    background: var(--yellow); 
+}
+
+.section h2 {
+    font-size: clamp(22px, 3vw, 32px);
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--text);
+}
+
+.section h2.light { 
+    color: #fff; 
+}
+
+.section-tag {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--yellow);
+    margin-bottom: 8px;
+}
+
+.section-tag-yellow {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: #7a8800;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: var(--text-muted);
+    font-size: 15px;
+    margin-bottom: 32px;
+}
+
+.text-center { 
+    text-align: center; 
+}
+
+.cta-note {
+    font-size: 13px;
+    color: #555;
+    margin-top: 12px;
+}
+
+.pain-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    margin-top: 32px;
+}
+
+.pain-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    background: #f9f9f9;
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+}
+
+.pain-icon { 
+    font-size: 28px; 
+    flex-shrink: 0; 
+}
+
+.pain-item strong {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--text);
+}
+
+.pain-item p { 
+    font-size: 14px; 
+    color: var(--text-muted); 
+    line-height: 1.6; 
+}
