@@ -653,3 +653,255 @@ body {
     grid-template-columns: repeat(3, 1fr); 
   }
 }
+
+/* ==========================================================================
+   SISTEMA DE MODAL (FORMULÁRIO DE CADASTRO)
+   ========================================================================== */
+
+/* Classe utilitária para esconder os elementos (Abas e o próprio Modal) */
+.hidden {
+  display: none !important;
+}
+
+/* Fundo escurecido que cobre toda a tela */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 20px;
+}
+
+/* Caixa branca do Modal */
+.modal {
+  background: #ffffff;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  animation: fadeInModal 0.3s ease;
+}
+
+@keyframes fadeInModal {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Cabeçalho do Modal */
+.modal-header {
+  background: #111111;
+  color: #ffffff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.modal-close:hover {
+  opacity: 0.7;
+}
+
+/* Corpo do Modal */
+.modal-body {
+  padding: 30px;
+}
+
+/* Indicador de Etapas (As bolinhas 1, 2, 3) */
+.step-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.step-dot {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.9rem;
+  border: 2px solid #e0e0e0;
+  background: #ffffff;
+  color: #999999;
+}
+
+.step-dot.active {
+  background: #111111;
+  color: #ffffff;
+  border-color: #111111;
+}
+
+.step-dot.done {
+  background: #4caf50;
+  color: #ffffff;
+  border-color: #4caf50;
+}
+
+.step-line {
+  flex: 1;
+  height: 2px;
+  background: #e0e0e0;
+  margin: 0 10px;
+  max-width: 60px;
+}
+
+.step-line.done {
+  background: #4caf50;
+}
+
+/* Títulos das etapas */
+.step-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #111111;
+  margin-bottom: 4px;
+}
+
+.step-sub {
+  font-size: 0.95rem;
+  color: #666666;
+  margin-bottom: 25px;
+}
+
+/* Campos de entrada (Inputs e Selects) */
+.field {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.field label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #444444;
+  margin-bottom: 6px;
+}
+
+.field input, .field select {
+  padding: 12px;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.field input:focus, .field select:focus {
+  border-color: #111111;
+}
+
+/* Botões do Modal */
+.btn-row {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.btn-next, .btn-back {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-next {
+  background: #111111;
+  color: #ffffff;
+}
+
+.btn-back {
+  background: #e0e0e0;
+  color: #333333;
+}
+
+/* Customização dos Checkboxes da etapa 3 */
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.checkbox-item input {
+  width: 18px;
+  height: 18px;
+}
+
+.checkbox-label {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkbox-label span {
+  font-size: 0.8rem;
+  color: #666666;
+}
+
+.icon-svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Tela de sucesso */
+.success-body {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.success-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.success-badge {
+  background: #e8f5e9;
+  color: #2e7d32;
+  padding: 6px 12px;
+  border-radius: 20px;
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
