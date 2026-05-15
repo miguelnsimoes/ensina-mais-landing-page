@@ -45,3 +45,22 @@ function goTo(step) {
   if (modal) modal.scrollTop = 0;
 }
 
+document.querySelectorAll('.checkbox-item').forEach(item => {
+  item.addEventListener('change', () => {
+    item.classList.toggle('selected', item.querySelector('input').checked);
+  });
+});
+
+
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+
+navToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+});
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+  });
+});
