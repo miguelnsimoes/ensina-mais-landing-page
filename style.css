@@ -905,3 +905,375 @@ body {
   font-weight: 600;
   margin-bottom: 15px;
 }
+
+/* ==========================================================================
+   PAINEL DE ACESSIBILIDADE — ABNT NBR 17225 §5.11 (cores) e §5.12 (texto)
+   ========================================================================== */
+
+/* ── Botão flutuante de acionamento ── */
+#a11y-trigger {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 10000;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--a11y-accent, #1a1a1a);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.35);
+  transition: transform 0.2s, background 0.2s;
+  border: none;
+  outline: none;
+}
+
+#a11y-trigger:hover { transform: scale(1.08); }
+#a11y-trigger:focus-visible { outline: 3px solid #d4e600; outline-offset: 3px; }
+
+/* Mostra apenas o ícone correto conforme o painel estar aberto ou fechado */
+#a11y-trigger svg:nth-child(2) { display: none; }
+#a11y-trigger.open svg:nth-child(1) { display: none; }
+#a11y-trigger.open svg:nth-child(2) { display: block; }
+
+/* ── Painel principal ── */
+.a11y-panel {
+  position: fixed;
+  bottom: 86px;
+  right: 24px;
+  z-index: 9999;
+  width: 300px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 14px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  color: #1a1a1a;
+  animation: a11y-slide-in 0.22s ease;
+  overflow: hidden;
+}
+
+.a11y-panel[hidden] { display: none; }
+
+@keyframes a11y-slide-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Cabeçalho ── */
+.a11y-panel-header {
+  background: #1a1a1a;
+  color: #fff;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.3px;
+}
+
+.a11y-panel-header button {
+  background: none;
+  border: none;
+  color: #aaa;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: color 0.15s;
+  line-height: 1;
+}
+.a11y-panel-header button:hover { color: #fff; }
+.a11y-panel-header button:focus-visible { outline: 2px solid #d4e600; }
+
+/* ── Seções internas ── */
+.a11y-section {
+  padding: 14px 16px;
+  border-bottom: 1px solid #eee;
+}
+.a11y-section:last-child { border-bottom: none; }
+
+.a11y-section-title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.a11y-norm {
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 10px;
+  color: #888;
+}
+
+/* ── Botões de ação ── */
+.a11y-row {
+  display: flex;
+  gap: 8px;
+}
+
+.a11y-btn {
+  flex: 1;
+  padding: 8px 6px;
+  border: 1.5px solid #ddd;
+  border-radius: 7px;
+  background: #f7f7f7;
+  color: #1a1a1a;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+  font-family: inherit;
+}
+.a11y-btn:hover { border-color: #999; background: #eee; }
+.a11y-btn:focus-visible { outline: 2px solid #d4e600; outline-offset: 2px; }
+.a11y-btn.active { border-color: #1a1a1a; background: #1a1a1a; color: #fff; }
+
+.a11y-btn-full {
+  width: 100%;
+  flex: none;
+  padding: 9px;
+  font-size: 12px;
+  color: #555;
+}
+.a11y-btn-full:hover { color: #111; }
+
+/* ── Grade de temas de cor ── */
+.a11y-color-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7px;
+}
+
+.a11y-color-btn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 10px;
+  border: 1.5px solid #ddd;
+  border-radius: 7px;
+  background: #f7f7f7;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+  font-family: inherit;
+  color: #1a1a1a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.a11y-color-btn:hover { border-color: #999; background: #eee; }
+.a11y-color-btn:focus-visible { outline: 2px solid #d4e600; outline-offset: 2px; }
+.a11y-color-btn.active { border-color: #1a1a1a; background: #1a1a1a; color: #fff; }
+.a11y-color-btn.active .swatch { border-color: #666 !important; }
+
+.swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 1px solid rgba(0,0,0,0.15);
+}
+
+/* ==========================================================================
+   TEMAS DE COR — §5.11 da ABNT NBR 17225
+   Cada tema redefine as CSS custom properties do :root
+   ========================================================================== */
+
+/* ── Alto Contraste ── */
+[data-theme="alto-contraste"] {
+  --yellow:       #ffff00;
+  --yellow-dark:  #e6e600;
+  --dark:         #000000;
+  --dark-2:       #111111;
+  --text:         #000000;
+  --text-muted:   #000000;
+  --text-light:   #222222;
+  --bg:           #ffffff;
+  --white:        #ffffff;
+  --border:       #000000;
+}
+
+[data-theme="alto-contraste"] body                    { background: #fff; color: #000; }
+[data-theme="alto-contraste"] .nav                    { background: #000; border-bottom: 2px solid #ffff00; }
+[data-theme="alto-contraste"] .hero                   { background: #000; }
+[data-theme="alto-contraste"] .hero p                 { color: #fff; }
+[data-theme="alto-contraste"] .hero-note              { color: #ccc; }
+[data-theme="alto-contraste"] .section-dark           { background: #000; border: 1px solid #ffff00; }
+[data-theme="alto-contraste"] .section-yellow         { background: #ffff00; }
+[data-theme="alto-contraste"] .pain-item,
+[data-theme="alto-contraste"] .service-card,
+[data-theme="alto-contraste"] .review-card            { background: #fff; border: 2px solid #000; }
+[data-theme="alto-contraste"] .footer                 { background: #000; border-top: 2px solid #ffff00; }
+[data-theme="alto-contraste"] .trust-bar              { background: #ffff00; }
+[data-theme="alto-contraste"] .stars                  { color: #000; }
+[data-theme="alto-contraste"] a                       { color: #0000EE; text-decoration: underline; }
+[data-theme="alto-contraste"] .nav-links a            { color: #ffff00; }
+[data-theme="alto-contraste"] .step p                 { color: #fff; }
+[data-theme="alto-contraste"] .modal                  { border: 2px solid #000; }
+
+/* ── Modo Claro ── */
+[data-theme="claro"] {
+  --yellow:      #5b7fff;
+  --yellow-dark: #3d5fe6;
+  --dark:        #1e2a5e;
+  --dark-2:      #2a3870;
+  --text:        #0d1433;
+  --text-muted:  #3a4060;
+  --bg:          #f0f4ff;
+  --white:       #ffffff;
+  --border:      #c5ceee;
+}
+
+[data-theme="claro"] body                  { background: #f0f4ff; color: #0d1433; }
+[data-theme="claro"] .nav                  { background: #1e2a5e; }
+[data-theme="claro"] .hero                 { background: #1e2a5e; }
+[data-theme="claro"] .section-dark         { background: #1e2a5e; }
+[data-theme="claro"] .hero p               { color: #c5ceee; }
+[data-theme="claro"] .hero-note            { color: #8090c0; }
+[data-theme="claro"] .step p               { color: #c5ceee; }
+[data-theme="claro"] .section-yellow       { background: #5b7fff; }
+[data-theme="claro"] .section-yellow h2,
+[data-theme="claro"] .section-yellow p,
+[data-theme="claro"] .section-yellow .cta-note { color: #fff; }
+[data-theme="claro"] .trust-bar            { background: #5b7fff; }
+[data-theme="claro"] .trust-num            { color: #fff; }
+[data-theme="claro"] .trust-label          { color: #dce4ff; }
+[data-theme="claro"] .stars                { color: #5b7fff; }
+[data-theme="claro"] .section-tag          { color: #7da0ff; }
+[data-theme="claro"] .footer               { background: #1e2a5e; }
+[data-theme="claro"] .footer-logo          { color: #7da0ff; }
+[data-theme="claro"] .nav-logo span        { color: #7da0ff; }
+[data-theme="claro"] .hero h1 span         { color: #7da0ff; }
+
+/* ── Deuteranopia (verde-vermelho) ── */
+[data-theme="deuteranopia"] {
+  --yellow:      #0072B2;
+  --yellow-dark: #005a8e;
+  --dark:        #1a1a1a;
+  --dark-2:      #2a2a2a;
+  --text:        #1a1a1a;
+  --text-muted:  #444;
+  --bg:          #f5f5f5;
+  --white:       #ffffff;
+  --border:      #d0d8e8;
+}
+
+[data-theme="deuteranopia"] .section-yellow  { background: #0072B2; }
+[data-theme="deuteranopia"] .trust-bar        { background: #0072B2; }
+[data-theme="deuteranopia"] .trust-num,
+[data-theme="deuteranopia"] .trust-label      { color: #fff; }
+[data-theme="deuteranopia"] .section-yellow h2,
+[data-theme="deuteranopia"] .section-yellow p,
+[data-theme="deuteranopia"] .section-yellow .cta-note { color: #fff; }
+[data-theme="deuteranopia"] .stars            { color: #0072B2; }
+[data-theme="deuteranopia"] .section-tag      { color: #56B4E9; }
+[data-theme="deuteranopia"] .section-tag-yellow { color: #0072B2; }
+[data-theme="deuteranopia"] .step-num         { background: #0072B2; color: #fff; }
+[data-theme="deuteranopia"] .nav-cta          { background: #0072B2; color: #fff; }
+[data-theme="deuteranopia"] .hero-tag         { background: #0072B2; color: #fff; }
+[data-theme="deuteranopia"] .btn-primary      { background: #0072B2; color: #fff; }
+[data-theme="deuteranopia"] .btn-dark         { color: #0072B2; }
+[data-theme="deuteranopia"] .step-dot.done    { background: #0072B2; border-color: #0072B2; }
+[data-theme="deuteranopia"] .step-line.done   { background: #0072B2; }
+
+/* ── Protanopia (vermelho-verde) ── */
+[data-theme="protanopia"] {
+  --yellow:      #E69F00;
+  --yellow-dark: #c48900;
+  --dark:        #1a1a1a;
+  --dark-2:      #2a2a2a;
+  --text:        #1a1a1a;
+  --text-muted:  #444;
+  --bg:          #fdf9f0;
+  --white:       #ffffff;
+  --border:      #e8dfc8;
+}
+
+[data-theme="protanopia"] .section-yellow { background: #E69F00; }
+[data-theme="protanopia"] .trust-bar       { background: #E69F00; }
+[data-theme="protanopia"] .stars           { color: #E69F00; }
+[data-theme="protanopia"] .section-tag     { color: #E69F00; }
+[data-theme="protanopia"] .section-tag-yellow { color: #9a6900; }
+[data-theme="protanopia"] .step-num        { background: #E69F00; color: #1a1a1a; }
+[data-theme="protanopia"] .hero-tag        { background: #E69F00; color: #1a1a1a; }
+[data-theme="protanopia"] .btn-primary     { background: #E69F00; color: #1a1a1a; }
+[data-theme="protanopia"] .step-dot.done   { background: #0072B2; border-color: #0072B2; }
+[data-theme="protanopia"] .step-line.done  { background: #0072B2; }
+
+/* ── Tritanopia (azul-amarelo) ── */
+[data-theme="tritanopia"] {
+  --yellow:      #CC79A7;
+  --yellow-dark: #b05c8e;
+  --dark:        #1a1a1a;
+  --dark-2:      #2a2a2a;
+  --text:        #1a1a1a;
+  --text-muted:  #444;
+  --bg:          #fdf5f9;
+  --white:       #ffffff;
+  --border:      #e8cfe0;
+}
+
+[data-theme="tritanopia"] .section-yellow { background: #CC79A7; }
+[data-theme="tritanopia"] .trust-bar       { background: #CC79A7; }
+[data-theme="tritanopia"] .trust-num       { color: #fff; }
+[data-theme="tritanopia"] .trust-label     { color: #fff; }
+[data-theme="tritanopia"] .section-yellow h2,
+[data-theme="tritanopia"] .section-yellow p,
+[data-theme="tritanopia"] .section-yellow .cta-note { color: #fff; }
+[data-theme="tritanopia"] .stars           { color: #CC79A7; }
+[data-theme="tritanopia"] .section-tag     { color: #CC79A7; }
+[data-theme="tritanopia"] .section-tag-yellow { color: #7a3a5e; }
+[data-theme="tritanopia"] .step-num        { background: #CC79A7; color: #fff; }
+[data-theme="tritanopia"] .hero-tag        { background: #CC79A7; color: #fff; }
+[data-theme="tritanopia"] .btn-primary     { background: #CC79A7; color: #fff; }
+[data-theme="tritanopia"] .nav-logo span   { color: #CC79A7; }
+[data-theme="tritanopia"] .hero h1 span    { color: #CC79A7; }
+[data-theme="tritanopia"] .step-dot.done   { background: #009E73; border-color: #009E73; }
+[data-theme="tritanopia"] .step-line.done  { background: #009E73; }
+
+/* ==========================================================================
+   AJUSTES DE TAMANHO DE FONTE — §5.12 da ABNT NBR 17225
+   ========================================================================== */
+html[data-font-size="sm"]   { font-size: 13px; }
+html[data-font-size="md"]   { font-size: 16px; }
+html[data-font-size="lg"]   { font-size: 19px; }
+html[data-font-size="xl"]   { font-size: 22px; }
+html[data-font-size="xxl"]  { font-size: 25px; }
+
+/* ==========================================================================
+   AJUSTES DE ESPAÇAMENTO — §5.12 da ABNT NBR 17225
+   ========================================================================== */
+html[data-spacing="normal"]  body { line-height: 1.6; }
+html[data-spacing="relaxed"] body { line-height: 2.0; }
+html[data-spacing="loose"]   body { line-height: 2.5; }
+
+html[data-spacing="relaxed"] p,
+html[data-spacing="relaxed"] li,
+html[data-spacing="relaxed"] .pain-item p,
+html[data-spacing="relaxed"] .service-card p,
+html[data-spacing="relaxed"] .review-card p,
+html[data-spacing="relaxed"] .step p { letter-spacing: 0.02em; word-spacing: 0.08em; }
+
+html[data-spacing="loose"] p,
+html[data-spacing="loose"] li,
+html[data-spacing="loose"] .pain-item p,
+html[data-spacing="loose"] .service-card p,
+html[data-spacing="loose"] .review-card p,
+html[data-spacing="loose"] .step p { letter-spacing: 0.05em; word-spacing: 0.15em; }
+
+/* Garante que o painel não quebre o layout em telas pequenas */
+@media (max-width: 360px) {
+  .a11y-panel { right: 8px; width: calc(100vw - 16px); }
+  #a11y-trigger { right: 8px; bottom: 16px; }
+}
