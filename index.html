@@ -424,6 +424,78 @@
     </div>
   </div>
 
+  <!-- ============================================================
+       PAINEL DE ACESSIBILIDADE — ABNT NBR 17225 itens 5.11 e 5.12
+       ============================================================ -->
+  <div id="a11y-trigger" aria-label="Abrir painel de acessibilidade" role="button" tabindex="0" title="Acessibilidade">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="22" height="22">
+      <circle cx="12" cy="12" r="10"/>
+      <path d="M12 8v4l3 3"/>
+      <circle cx="12" cy="7" r="1" fill="currentColor"/>
+      <path d="M9 12h6M12 15v3M10.5 15l-1.5 2.5M13.5 15l1.5 2.5"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="22" height="22">
+      <circle cx="12" cy="5" r="2"/>
+      <path d="M12 7v5l-3 5m3-5 3 5M9 10H7m10 0h-2"/>
+    </svg>
+  </div>
+
+  <div id="a11y-panel" class="a11y-panel" role="dialog" aria-modal="false" aria-label="Painel de acessibilidade" hidden>
+    <div class="a11y-panel-header">
+      <span>⚙ Acessibilidade</span>
+      <button id="a11y-close" aria-label="Fechar painel de acessibilidade">✕</button>
+    </div>
+
+    <!-- 5.12 — Conteúdo textual -->
+    <div class="a11y-section">
+      <div class="a11y-section-title">Tamanho do texto <span class="a11y-norm">(NBR 17225 §5.12)</span></div>
+      <div class="a11y-row">
+        <button class="a11y-btn" id="font-decrease" aria-label="Diminuir tamanho da fonte">A−</button>
+        <button class="a11y-btn" id="font-reset"    aria-label="Redefinir tamanho da fonte">A</button>
+        <button class="a11y-btn" id="font-increase" aria-label="Aumentar tamanho da fonte">A+</button>
+      </div>
+    </div>
+
+    <div class="a11y-section">
+      <div class="a11y-section-title">Espaçamento entre linhas <span class="a11y-norm">(NBR 17225 §5.12)</span></div>
+      <div class="a11y-row">
+        <button class="a11y-btn" id="spacing-normal"  aria-label="Espaçamento normal">Normal</button>
+        <button class="a11y-btn" id="spacing-relaxed" aria-label="Espaçamento ampliado">Amplo</button>
+        <button class="a11y-btn" id="spacing-loose"   aria-label="Espaçamento máximo">Máximo</button>
+      </div>
+    </div>
+
+    <!-- 5.11 — Uso de cores -->
+    <div class="a11y-section">
+      <div class="a11y-section-title">Esquema de cores <span class="a11y-norm">(NBR 17225 §5.11)</span></div>
+      <div class="a11y-color-grid">
+        <button class="a11y-color-btn" data-theme="default"        aria-label="Cores originais"          title="Original">
+          <span class="swatch" style="background:#d4e600"></span>Original
+        </button>
+        <button class="a11y-color-btn" data-theme="alto-contraste" aria-label="Alto contraste"           title="Alto contraste">
+          <span class="swatch" style="background:#fff;border:2px solid #000"></span>Alto contraste
+        </button>
+        <button class="a11y-color-btn" data-theme="claro"          aria-label="Modo claro"               title="Modo claro">
+          <span class="swatch" style="background:#f0f4ff"></span>Claro
+        </button>
+        <button class="a11y-color-btn" data-theme="deuteranopia"   aria-label="Daltonismo (deuteranopia)" title="Deuteranopia">
+          <span class="swatch" style="background:#0072B2"></span>Deuteranopia
+        </button>
+        <button class="a11y-color-btn" data-theme="protanopia"     aria-label="Daltonismo (protanopia)"   title="Protanopia">
+          <span class="swatch" style="background:#E69F00"></span>Protanopia
+        </button>
+        <button class="a11y-color-btn" data-theme="tritanopia"     aria-label="Daltonismo (tritanopia)"   title="Tritanopia">
+          <span class="swatch" style="background:#CC79A7"></span>Tritanopia
+        </button>
+      </div>
+    </div>
+
+    <div class="a11y-section">
+      <button class="a11y-btn a11y-btn-full" id="a11y-reset-all" aria-label="Redefinir todas as configurações de acessibilidade">↺ Redefinir tudo</button>
+    </div>
+  </div>
+
   <script src="script.js"></script>
+  <script src="a11y.js"></script>
 </body>
 </html>
